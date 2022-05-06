@@ -422,6 +422,45 @@ body{
 			font-size: 72px;
 		}
 	}
+	@media (min-width: 598px){
+	@media (max-height:724px){
+		.wrapper{
+			padding: 0px 5px;
+		}
+		.left-part{
+			&__title{
+				left: 0%;
+				top: 50%;
+				transform: translate(0, -90px);
+				font-size: 44px;
+				div{
+					font-size: 20px;
+				}
+			}
+			&__button{
+				left: 0;
+				top: 50%;
+				transform: translate(0, 40px);
+			}
+		}
+		.right-part{
+			right: 0%;
+			transform: translate(0, -50%);
+		}
+		.square {
+			width: 100px;
+			height: 100px;
+			font-size: 12px;
+			&__top-text {
+				margin-bottom: 16px;
+			}
+			
+			&__middle-text {
+				font-size: 30px;
+			}
+		}
+	}
+}
 }
 //===============================================================================================================================================================================================
 

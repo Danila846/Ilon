@@ -824,6 +824,43 @@ body {
     font-size: 72px;
   }
 }
+@media (max-width: 879px) and (min-width: 598px) and (max-height: 724px) {
+  .wrapper {
+    padding: 0px 5px;
+  }
+
+  .left-part__title {
+    left: 0%;
+    top: 50%;
+    transform: translate(0, -90px);
+    font-size: 44px;
+  }
+  .left-part__title div {
+    font-size: 20px;
+  }
+  .left-part__button {
+    left: 0;
+    top: 50%;
+    transform: translate(0, 40px);
+  }
+
+  .right-part {
+    right: 0%;
+    transform: translate(0, -50%);
+  }
+
+  .square {
+    width: 100px;
+    height: 100px;
+    font-size: 12px;
+  }
+  .square__top-text {
+    margin-bottom: 16px;
+  }
+  .square__middle-text {
+    font-size: 30px;
+  }
+}
 @media (max-width: 767px) {
   .wrapper {
     padding: 0px 5px;
