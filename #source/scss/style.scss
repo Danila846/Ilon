@@ -1,0 +1,471 @@
+//<МИКСИНЫ>==================================================================================================================================================================
+@import 'mixins';
+//</МИКСИНЫ>==================================================================================================================================================================
+
+//<ШРИФТЫ>==================================================================================================================================================================
+
+//<Подключаем шрифты>==================================================================================================================================================================
+@font-face {
+	font-family: 'MuseoSansCyrl-100';
+	src: url('../fonts/museosanscyrl-100.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/museosanscyrl-100.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/museosanscyrl-100.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/museosanscyrl-100.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/museosanscyrl-100.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/museosanscyrl-100.svg#museosanscyrl-100') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+@font-face {
+	font-family: 'MuseoSansCyrl-300';
+	src: url('../fonts/museosanscyrl-300.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/museosanscyrl-300.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/museosanscyrl-300.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/museosanscyrl-300.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/museosanscyrl-300.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/museosanscyrl-300.svg#museosanscyrl-300') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+@font-face {
+	font-family: 'MuseoSansCyrl-700';
+	src: url('../fonts/museosanscyrl-700.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/museosanscyrl-700.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/museosanscyrl-700.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/museosanscyrl-700.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/museosanscyrl-700.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/museosanscyrl-700.svg#museosanscyrl-700') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+//</Подключаем шрифты>==================================================================================================================================================================
+
+//<Шрифт по умолчанию>==================================================================================================================================================================
+$fontfamily:"MuseoSansCyrl-300"; 
+//</Шрифт по умолчанию>==================================================================================================================================================================
+
+//</ШРИФТЫ>==================================================================================================================================================================
+
+//<ПЕРЕМЕННЫЕ>==================================================================================================================================================================================
+$minwidth:320px;
+$mw:1170;
+$md1:$mw+12;
+$md2:992px;
+$md3:767px;
+$md4:0;
+//===============================================================================================================================================================================================
+
+//</ПЕРЕМЕННЫЕ>=================================================================================================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>==================================================================================================================================================================
+@import 'nullstyle';
+
+body{
+	width: 100%;
+	height: 100%;
+	background: center / cover no-repeat url("./../img/fon.png");
+
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>==================================================================================================================================================================
+
+//<ОБОЛОЧКА>=====================================================================================================================================================================================
+.wrapper{
+	height: 100vh;
+	color:rgb(187, 188, 190);
+	position: relative;
+	height: 100%;
+	padding: 0px 10px;
+	max-width: 1190px;
+	max-height: 100%;
+	margin: 0 auto;
+}
+//</ОБОЛОЧКА>====================================================================================================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===============================================================================================================================================================================
+.container{
+}
+//</ОСНОВНАЯ СЕТКА>==============================================================================================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>===============================================================================================================================================
+@import 'header';
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>==============================================================================================================================================
+
+//<ОСНОВНОЙ БЛОК>================================================================================================================================================================================
+
+.content-row{
+	// position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	// top: 20vh;
+	width: 100%;
+	// height: 380px;
+}
+//===============================================================================================================================================================================================
+.left-part {
+
+	&__title {
+		position: absolute;
+		top: 50%;
+		transform:translateY(-160px);
+		text-transform: uppercase;
+		user-select: none;
+		font-size: 58px;
+		font-family: 'MuseoSansCyrl-700';
+		background: linear-gradient(45deg, #ffffff 33%, #ff8181 66%, #ff0000);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: rgb(255, 180, 180);
+		div{
+			font-size: 25px;
+			margin: 5px 0px 0px 0px;
+			font-family: 'MuseoSansCyrl-300';
+		}
+	}
+
+	&__button {
+		position: absolute;
+		z-index: 1;
+		top: 60%;
+		a{
+			font-family: 'MuseoSansCyrl-100';
+			background-color: #000;
+			width: 180px;
+			height: 35px;
+			font-size: 14px;
+			color: #ffffff;
+			padding: 11px 25px;
+			border-style: solid;
+			border-width: 1px;
+			border-image-source: linear-gradient(189.0deg, #263e66 20%, #09213d 40%, #111f2d 61%, #23599c 79%);
+			border-image-slice: 1;
+			transition: 0.3s ease 0s;
+			&::before{
+				content: url('../img/angle1.png');
+				position: absolute;
+				top: 8px;
+				left: -15px;
+				transition: all 0.3s ease 0s;
+			}
+			&::after{
+				content: url('../img/angle2.png');
+				position: absolute;
+				bottom: 6px;
+				right: -15px;
+				transition: all 0.3s ease 0s;
+			}
+			&:hover::before{
+				transform: scale(1.2);
+			}
+			&:hover::after{
+				transform: scale(1.2);
+			}
+			&:hover{
+				border-image-source: linear-gradient(189.0deg, #335288 20%, #0e335e 40%, #1a3045 61%, #2969b7 79%);
+				background-color: rgb(23, 23, 23);
+			}
+		}
+	}
+}
+//===============================================================================================================================================================================================
+.right-part {
+	position: absolute;
+	display: flex;
+	right: 0;
+	top: 50%;
+			transform: translateY(-50%);
+	flex-direction: row;
+	&__left-squares {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	}
+
+	&__right-squares {
+		display: flex;
+	flex-direction: column;
+	align-items: center;
+	}
+}
+.square {
+	position: relative;
+	margin: 0px 0px 10px 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 185px;
+	height: 185px;
+	justify-content: center;
+	font-size: 18px;
+	color: #fff;
+	font-family: 'MuseoSansCyrl-100';
+	cursor: pointer;
+	&::after{
+		content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			opacity: 0.03;
+			transition: 0.3s ease 0s;
+	}
+	&:hover::after{
+		opacity: 0.2;
+	}
+	&__top-text {
+		margin-bottom: 20px;
+	}
+	
+	&__middle-text {
+		font-family: 'MuseoSansCyrl-700';
+		font-size: 60px;
+		margin: 0px 0px 0px 0px;
+		
+	}
+	&__first {
+		&::after{
+			background: -moz-linear-gradient(bottom right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(bottom right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to top left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+		}
+		&:hover::after{
+			background: -moz-linear-gradient(bottom right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(bottom right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to top left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+		}
+	}
+	&__second {
+		&::after{
+			background: -moz-linear-gradient(top right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+		}
+		&:hover::after{
+			background: -moz-linear-gradient(top right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+		}
+		span{
+			font-size: 18px;
+		}
+	}
+	&__third {
+		&::after{
+			background: -moz-linear-gradient(bottom left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(bottom left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to top right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+		}
+		&:hover::after{
+			background: -moz-linear-gradient(bottom left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(bottom left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to top right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+		}
+	}
+	&__fourth {
+		&::after{
+			background: -moz-linear-gradient(top left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+		}
+		&:hover::after{
+			background: -moz-linear-gradient(top left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+		}
+	}
+}
+//===============================================================================================================================================================================================
+.image {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	max-width: 35%;
+	transform: translateX(-100%);
+	&__rocket-line {
+		width: 100%;
+	}
+}
+//===============================================================================================================================================================================================
+@media (min-width:1079px){
+	@media (min-height:881px){
+		.left-part {
+
+			&__title {
+				font-size: 72px;
+				div{
+					font-size: 30px;
+				}
+			}
+	
+			&__button {
+				top: 56%;
+				font-size: 20px;
+				a{
+					font-size: 30px;
+				}
+			}
+		}
+		.square {
+	
+			width: 240px;
+			height: 240px;
+			font-size: 30px;
+			&__top-text {
+				margin-bottom: 20px;
+			}
+			
+			&__middle-text {
+				font-size: 72px;
+			}
+			
+		}
+	}
+}
+@media (max-width:1078px){
+	
+	.left-part {
+		&__title {
+			top: 50%;
+			transform:translateY(-120px);
+			font-size: 50px;
+		}
+	}
+	.square {
+
+		width: 175px;
+		height: 175px;
+		font-size: 18px;
+		&__top-text {
+			margin-bottom: 20px;
+		}
+		
+		&__middle-text {
+			font-size: 52px;
+		}
+	}
+	@media (min-height:881px){
+		.left-part {
+			&__title {
+				top: 50%;
+				transform:translateY(-130px);
+				font-size: 70px;
+			}
+			&__button {
+				top: 58%;
+				a{
+					font-size: 24px;
+				}
+			}
+		}
+	}
+	@media (max-height:440px){
+		.square {
+			width: 156px;
+			height: 156px;
+			font-size: 16px;
+			&__top-text {
+				margin-bottom: 16px;
+			}
+			
+			&__middle-text {
+				font-size: 46px;
+			}
+		}
+	}
+}
+//===============================================================================================================================================================================================
+
+@media (max-width:879px){
+	body.lock{
+		overflow: hidden;
+	}
+	.image{
+		display: none;
+	}
+	.left-part {
+		&__title{
+			top: 10%;
+			left: 50%;
+			transform: translate(-50%,0);
+			background: linear-gradient(180deg, #f9dfdf 33%, #ff8181 66%, #fe4444);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: rgb(255, 180, 180);
+			div{
+				
+			}
+		}
+		&__button{
+			display: inline-block;
+			top: 85%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+	.right-part{
+		right: 50%;
+		transform: translate(50%, -50%);
+	}
+	.square {
+		width: 220px;
+		height: 220px;
+		font-size: 24px;
+		&__top-text {
+			margin-bottom: 22px;
+		}
+		
+		&__middle-text {
+			font-size: 72px;
+		}
+	}
+}
+//===============================================================================================================================================================================================
+
+@media (max-width:767px){
+	.wrapper{
+		padding: 0px 5px;
+	}
+}
+//===============================================================================================================================================================================================
+
+@media (max-width:600px){
+	.left-part{
+		&__title{
+			top: 15%;
+			font-size: 38px;
+			div{
+				font-size: 20px;
+			}
+		}
+		&__button{
+			top: 80%;
+			a{
+				font-size: 10px;
+			}
+		}
+	}
+	.right-part{
+	}
+	.square{
+		width:130px;
+		height: 130px;
+		font-size: 16px;
+		&__top-text {
+			margin-bottom: 22px;
+		}
+		
+		&__middle-text {
+			font-size: 40px;
+			div{
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+//</ОСНОВНОЙ БЛОК>===============================================================================================================================================================================
+
